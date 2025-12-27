@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Clicker → Neon Maze Login</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="Game.css" />
+</head>
+<body class="neon">
+  <header id="topbar">
+    <div id="title">Clicker & Neon Maze — Unlock Login</div>
+    <div id="controls">
+      <select id="themeSel" title="Theme">
+        <option value="neon">Neon</option>
+        <option value="dark">Dark</option>
+        <option value="light">Light</option>
+      </select>
+      <button id="musicToggle">🎵 Music</button>
+      <button id="resetAll">Reset All</button>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- CLICKER AREA (initial screen) -->
+    <section id="clickerScreen" class="screen">
+      <div id="clickerPanel">
+        <h2>Click Anywhere In The Box</h2>
+        <div id="clickerArea" tabindex="0">
+          <div id="clickHint">Click / Tap Here</div>
+        </div>
+
+        <div id="status">
+          <div id="pointsDisplay">Points: 0</div>
+          <div id="multDisplay">Multiplier: x1</div>
+        </div>
+
+        <div id="shop">
+          <h3>Shop</h3>
+          <div class="shopRow">
+            <button id="buy25" disabled>Buy x25 (25 pts)</button>
+            <button id="buy50" disabled>Buy x50 (200 pts)</button>
+            <button id="buy100" disabled>Buy x100 (500 pts)</button>
+          </div>
+          <div class="shopRow">
+            <button id="buyAuto" disabled>Buy Auto (100 pts)</button>
+            <button id="buyThemeSkin">Random Skin (Free)</button>
+          </div>
+        </div>
+
+        <p id="goalNote">Reach <strong>1000 points</strong> to unlock the Neon Maze.</p>
+      </div>
+    </section>
+
+    <!-- MAZE AREA (hidden until unlocked) -->
+    <section id="mazeScreen" class="screen hidden">
+      <div id="mazeUI">
+        <div id="hud">
+          <div id="levelText">Level 1 / 3</div>
+          <div id="timerText">Time: 30</div>
+          <div id="mazeMsg">Drag the <span class="keyLabel">KEY</span> to the <span class="lockLabel">LOCK</span></div>
+        </div>
+        <div id="mazeControls">
+          <button id="restartLevel">Restart Level</button>
+          <button id="muteSfx">🔊 Sound: On</button>
+          <button id="backToClicker">Back to Clicker</button>
+        </div>
+      </div>
+
+      <div id="gameWrap">
+        <canvas id="mazeCanvas" width="900" height="600"></canvas>
+      </div>
+    </section>
+
+    <!-- LOGIN BOX (appears after finishing maze) -->
+    <section id="loginScreen" class="screen hidden">
+      <div id="loginBox">
+        <h2>Login Unlocked 🎉</h2>
+        <input id="uname" placeholder="Username" />
+        <input id="pwd" placeholder="Password" type="password" />
+        <button id="doLogin">Login</button>
+        <p id="loginMsg"></p>
+      </div>
+    </section>
+  </main>
+
+  <footer id="foot">Made for Dawood — Neon Maze + Clicker</footer>
+
+  <script src="Game.js"></script>
+</body>
+</html>
